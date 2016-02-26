@@ -1,0 +1,68 @@
+Config on root path
+
+---
+  project_title:  "Offline Content Packaging Tool"
+  project_subtitle: "Offline Package Test..."
+  absolute_link_color: "green" 
+  tracking_code: "XX-XXXXXXXX-X"
+  output_folder_name: "goc"
+  source: 
+    main_path: "build/source_files"
+    video_source: "videos"
+  destination: 
+    main_path: "build/output_files"
+  version: "1.0.0"
+  division:
+      disc1:
+       - sample_section 1
+       - sample_section 2
+      disc2:
+       - sample_section 3
+       - sample_section 4
+
+
+  Config for sections
+
+  ---
+  title: "Introduction to Android"
+  online_link: "https://www.google.com" 
+  metadata: 
+  - 
+    filename: "index.html"
+    title: "Fixing Bugs"
+  - 
+    filename: "main.html"
+    title: "Basic Android Concepts"
+
+
+  Config for videos subdirectories. Stored in a file called section_config.yaml.
+
+    ---
+      video_subtitle: "This section contains some introductory videos on Introduction to Android"
+      video_summary: "Introductory Android Videos"
+      
+      metadata: // Paths to the (optional) metadata files for each video.
+        video_filename1: "build/source_files/videos/metadata/video_filename1_metadata.yaml"
+        video_filename2: "build/source_files/videos/metadata/video_filename2_metadata.yaml"
+        video_filename3: "build/source_files/videos/metadata/video_filename3_metadata.yaml"
+
+  Metadata for subdirectory videos
+
+      ---
+        title: "Basic Android Concepts"
+        description: "Introductory Android Concepts Videos"
+        sub_title: "Introductory Android Videos"
+        thumbnail_url: "<thumbnail_url link>"
+  
+  
+  Format for videos_url.yaml. There should be one per video subdirectory. 'nkata generate' tries to pull down title, author name and author URL, and thumbnail for every video listed in this config file.
+
+      --- 
+          urls: 
+          - 
+            video_name: "Android Design Support Library-100 Days of Google Dev"
+            url: "https://www.youtube.com/watch?v=32i7ot0y78U"
+          - 
+            video_name: "Reaching All Users"
+            url: "https://www.youtube.com/watch?v=32i7ot0y78U"
+            

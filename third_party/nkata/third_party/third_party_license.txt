@@ -1,0 +1,21 @@
+This is the list of 3rd Party Libraries we are currently using for Nkata:
+
+1.  Click -- is a python package for creating beautiful Command line interface.
+     Author: Armin Ronacher
+     License: BSD licenses
+
+
+2.  Jinga2 -- A small but fast and easy to use stand-alone template engine written in pure python.
+     Author: Armin Ronacher
+     License: BSD licenses
+     Copyright (c) 2009 by the Jinja Team
+
+
+3.  BeautifulSoup(bs4) -- an HTML or XML parser, providing pythonic Idioms for iterating, searching and modifying the parse tree.
+     Author: Leonard Richardson
+     License: MIT Licenses
+
+
+4. PyYAML -- YAML is a data serialization format designed for human readability and interaction with scripting languages.
+    Author: Kirill Simonov
+    License: MIT Licenses

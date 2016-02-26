@@ -1,0 +1,6 @@
+---
+  video_subtitle: "This section contains some introductory videos on Programming Fundamentals"
+  video_summary: "Introductory Programming Fundamentals Videos"
+  template_path: "templates/video_list.html"
+  metadata: 
+    test: "build/source/videos/Chrome/metadata/test_metadata.yaml"

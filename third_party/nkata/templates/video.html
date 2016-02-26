@@ -1,0 +1,425 @@
+
+{% autoescape true %}
+<html>
+    <head>
+       <title>{{ video_name }}</title>
+
+       <style type="text/css">
+
+       html {
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+*, *:before, *:after {
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+body {
+    background: #fff;
+    color: #212121;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 18px;
+    margin: 0;
+    padding: 0 !important;
+}
+
+body.project-home,
+body.videos,
+body.solo-video {
+    background: #f7f7f7;
+}
+
+a {
+    font-size: 18px;
+    line-height: 36px;
+    text-decoration: none;
+}
+
+a.button,
+.card a.button,
+a.button-white {
+    background-color: #03a9f4;
+    border-radius: 2px;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, .37);
+    color: #fff;
+    display: inline-block;
+    font-size: 14px;
+    height: 32px;
+    line-height: 18px;
+    margin: 8px 0;
+    padding: 8px;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+a.button-white {
+    background-color: #fff;
+    color: #03a9f4;
+    position: absolute;
+    right: 20px;
+    top: 4px;
+    z-index: 1;
+}
+
+p {
+    line-height: 32px;
+    margin: 16px 0;
+}
+
+h1 {
+    color: #757575;
+}
+
+h2, .head-con h2 {
+    font-size: 34px;
+    line-height: 40px;
+}
+
+.head-con h2 {
+    color: #fff;
+    font-weight: bold;
+    margin: 28px 0 !important;
+}
+
+.full-site-width {
+    margin: 0 auto;
+    max-width: 1400px;      
+}
+
+.head-con {
+    background: #4285f4;
+    color: white;
+    position: relative;
+    text-align: left;
+}
+
+.head-con hr {
+    display: none;
+}
+
+.head-con p {
+    font-size: 18px;
+}
+
+.dev-logo {
+    margin-right: 8px;
+    position: relative;
+    top: 11px;
+    width: 51px;
+}
+
+.contents {
+    margin: 0 auto;
+    width: 80%;
+}
+
+.contents-inner {
+    padding: 20px 0;
+}
+
+.top-bar {
+    background: #000;
+    min-height: 56px;
+    opacity: .1;
+}
+
+.back-button-wrapper {
+    color: #fff;
+    cursor: pointer;
+    font-size: 17px;
+    font-weight: normal;
+    position: absolute;
+    text-transform: uppercase;
+    top: 10px;
+    z-index: 1;
+}
+
+.back-button {
+    position: relative;
+    margin-left: 20px;
+    margin-right: 12px;
+    top: 6px;
+    vertical-align: top;
+}
+
+.header-title-contents {
+    min-height: 194px;
+}
+
+.card {
+    background: #fff;
+    border-radius: 5px;
+    box-shadow: 1px 2px 10px rgba(0, 0, 0, .2);
+    margin: 40px auto 0;
+    width: 80%;
+}
+
+.card-inner {
+    overflow: auto;
+    padding: 40px;
+}
+
+.card-inner > h2:first-child,
+.card-inner > h3:first-child {
+    margin-top: 20px;
+}
+
+.card ul {
+    margin: 0;
+    padding: 0;
+}
+
+.card li {
+    list-style-type: none;
+    margin: 4px 0;
+}
+
+.card a {
+    color: #03a9f4;
+}
+
+.card a.online {
+    color: green;
+}
+
+.card h2 {
+    color: #757575;
+}
+
+.card h3 {
+    color: #212121;
+    font-size: 24px;
+    margin-bottom: 8px;
+}
+
+.card h3.red {
+    color: red;
+}
+
+.social-wrapper {
+    float: right;
+    font-size: 0;
+}
+
+.social-wrapper a {
+    display: block;
+    float: left;
+    height: 48px;
+    text-indent: -9999px;
+    width: 48px;
+}
+
+.twitter-link {
+    background: url(../../img/twitter-logo.svg) 0 0 no-repeat;
+    margin-right: 16px;
+}
+
+.plus-link {
+    background: url(../../img/google-plus-logo.svg) 0 0 no-repeat;
+}
+
+.section {
+    color: #3F51B5;
+    line-height: 30px;
+    padding-bottom: 8px;
+    position: relative;
+}
+
+#back-button {
+    position: absolute;
+    text-align: left; 
+    text-indent: 10px;
+
+}
+
+#back {
+    color: white;
+    text-decoration: none;
+}
+
+.last-updated {
+    color: #757575;
+    font-size: 16px;
+    font-style: italic;
+    margin: 12px auto 60px;
+}
+
+
+/* Video page stuff starts here */
+.main-content{
+    margin-top: 50px;
+}
+body.videos .card {
+    margin-bottom: 40px;
+    overflow: auto;
+    padding-left: 40px;
+}
+body.videos .card h2 {
+    margin: 40px;
+}
+.video {
+    min-height: 80px;
+    width: 80%;
+    margin: 0 auto 0 auto;
+    padding: 0 30px 15px 30px;
+    background-color: white;
+}
+.video-box {
+    display: block;
+    float: left;
+    margin: 0 40px 40px 0;
+    /* 1st width rule is a fallback for older browsers that don't support calc */
+    width: 50%;
+    /*width: calc((100% - 120px)/3); */
+}
+.video-thumb {
+    background: url(../../img/play-btn.svg) no-repeat 48% 51% #d8d8d8;
+    height: 150px;
+    opacity: .55;
+    width: 100%;
+}
+.video-thumb a {
+    display: block;
+    height: 100%;
+    width: 100%;
+}
+body.solo-video .card {
+    margin-bottom: 40px;
+}
+.solo-video-description {
+    margin-bottom: 0;
+}
+
+video {
+    width: 100%;
+}
+#img-con, #title {
+    display: inline-block;
+}
+#img-con {
+    margin-top: 5px;
+    /*width: auto;*/
+}
+
+#title {
+    text-align: center;
+    margin-top: 10px;
+    height: 80px;
+}
+
+#title a {
+    color: #212121;
+    font-size: 16px;
+    line-height: 24px;
+}
+
+#name{
+    position:relative;
+    top: 0;
+    word-wrap: break-word;
+}
+#subtitle{
+    font-size: .83em;
+    /*word-wrap: break-word;*/
+    line-height: 1.5em;
+}
+a {
+    text-decoration: none;
+    color: #263238;
+}
+
+.footer {
+background: #424242;
+bottom: 0;
+color: #999999;
+font-size: 13px;
+left: 0;
+min-height: 60px;
+padding: 10px 24px;
+position: relative;
+right:0;
+text-align: center;
+}
+
+.footer a {
+color: #fff;
+font-size: 13px;
+font-weight: bold;
+}
+
+.footer a,
+.footer p {
+line-height: 24px;
+}
+
+@media only screen and (max-width: 1000px) {
+    .video-box {
+        display: block;
+        float: left;
+        margin: 0 40px 40px 0;
+        /* 1st width rule is a fallback for older browsers that don't support calc */
+        width: 44%;
+        width: calc((100% - 80px)/2);
+    }
+}
+
+@media only screen and (max-width: 550px) {
+    .video-box {
+        /* 1st width rule is a fallback for older browsers that don't support calc */
+        width: 96%;
+        width: calc(100% - 40px);
+    } 
+
+    #title {
+        font-size: 14px;
+        text-align: center;
+        width: 100%;
+    }
+}
+
+       </style>
+
+      
+
+    </head>
+    <body class="solo-video">
+        <div class="head-con">
+            <a class="back-button-wrapper" href="{{ back }}" >
+                <img class="back-button" src="../../../img/back-arrow.svg"> Back
+            </a>
+            <div class="top-bar"></div>
+            <div class="contents header-title-contents">
+                <div class="contents-inner">
+                   <h2>{{title }} </h2>
+                    
+                </div>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="card-inner video">
+               
+                <p>{{ sub_title }}</p>
+                <video controls>
+                    <source src="{{ video_source }}" type="{{ video_type }}">
+                    Your browser does not support the video tag.<br>
+                    <a href="{{ video_source }}">Download</a>
+                </video>
+                {%- if description -%}
+                <p class="solo-video-description video_description">{{ description }}</p>
+                     {% endif %}
+            </div>
+        </div>
+
+      
+        <div class="footer"><p >Except where otherwise noted, this content in this disk and all accompanying disks are licensed under the <a href="#" target="_blank">INCLUDE LICENSE PATH</a>, and code samples (if any) are licensed under the <a href="#" target="_blank">INCLUDE LICENSE PATH</a>.</p></div>
+
+    </body>
+
+            {%- if tracking_code -%}
+        <img style="width:1px; height:1px" src="http://www.google-analytics.com/collect?cn=OfflineDevContent&cm=site&cid=2111303265.2111303592&ea=open&ec=page&tid={{tracking_code}}&t=pageview&v=1&cs=offlinedevsite&dp={{dp}}">
+    {% endif %}
+</html>
+{% endautoescape %}

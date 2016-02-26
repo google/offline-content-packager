@@ -1,0 +1,13 @@
+---
+  project_title: "Offline Content Packaging Tool"
+  project_subtitle: "Offline Package Test"
+  absolute_link_color: "green"
+  tracking_code: "UA-XXXXXXX-X"
+  output_folder_name: "goc"
+  source:
+    main_path: "build/source"
+    video_source: "videos"
+  destination:
+    main_path: "build/output"
+  version: "1.0.0"
+  division: ""
